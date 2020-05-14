@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "serve": "rollup -c rollup.config.js"
+  },
   "dependencies": {
     "d3": "^5.16.0"
   },
