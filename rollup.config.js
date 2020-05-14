@@ -1,9 +1,12 @@
-import serve from "rollup-plugin-serve";
+const serve = require("rollup-plugin-serve");
 
-export default {
+module.exports = {
   input: "src/index.js",
   output: {
     file: "public/bundle.js",
   },
-  plugins: [serve({ contentBase: "public", port: "8080" })],
+  watch: {
+    exclude: ["node_modules/**"],
+  },
+  plugins: [serve({ port: "8080", contentBase: "public" })],
 };
