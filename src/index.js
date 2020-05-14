@@ -1,7 +1,7 @@
 import { character } from "./character";
 
 const func = () => {
-  console.log("whew");
+  console.log("awe yeah");
   character();
 };
 
