@@ -1,4 +1,6 @@
 {
+  "name": "d3-saga-thing",
+  "version": "0.0.1",
   "scripts": {
     "serve": "rollup -w -c rollup.config.js"
   },
