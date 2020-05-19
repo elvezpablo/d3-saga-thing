@@ -1,21 +1,39 @@
 # Saga Family Tree Visualizations
 
-The goal of this document is to document and visualize a family tree from the _Icelandic Sagas_ (need references)
+Development of a affinal tree visualization for the display of familial connections for overlapping families and saga (stories). The software should be functional as a storytelling tool and
 
 - [Saga Family Tree Visualizations](#saga-family-tree-visualizations)
   - [Reference Images](#reference-images)
+  - [Requirements](#requirements)
+    - [Version 1: Simple Single Family Affinal Tree](#version-1-simple-single-family-affinal-tree)
+    - [Version 2: Additional Dimension](#version-2-additional-dimension)
   - [Sibling Relationships](#sibling-relationships)
   - [References](#references)
-    - [Example Trees](#example-trees)
+    - [Family Echo Example Trees](#family-echo-example-trees)
     - [Sketches](#sketches)
     - [Genealogical](#genealogical)
     - [Graphics](#graphics)
+    - [Hosting](#hosting)
 
 ## Reference Images
 
 ![](docs/images/asmund_tree.png)
 
 ![](docs/images/asmund_tree_20.png)
+
+## Requirements
+
+### Version 1: Simple Single Family Affinal Tree
+
+- Pick and learn layout technology
+- Establish graphical language
+- Setup dev environments
+- Base data structures
+- Output simple tree
+
+### Version 2: Additional Dimension
+
+- Affordance for additional dimension
 
 ## Sibling Relationships
 
@@ -29,7 +47,7 @@ Various Tree algorithms.
 
 ## References
 
-### Example Trees
+### Family Echo Example Trees
 
 - [Grim](http://www.familyecho.com/?p=CN4BS&c=b899bews5y&f=584050702172786993)
 - [Droplaugarsona](http://www.familyecho.com/?p=CN4BS&c=b899bews5y&f=584050702172786993)
@@ -46,8 +64,15 @@ Various Tree algorithms.
 
 - [Example of complex relationships](https://www.genopro.com/tutorials/second-marriage/)
 - [Genealogical Terms](https://support.ancestry.com/s/article/Glossary-of-genealogical-terms)
+- [Interactive Tree Video](https://www.youtube.com/watch?v=-FkRzDegzAo)
+- https://aviz.fr/geneaquilts/
 
 ### Graphics
 
 - [Colors](https://observablehq.com/@d3/color-schemes)
+- [Figma Tree Sketches](https://www.figma.com/file/RxjS1lBz9inXkHjYqwO9hC/SagaTreeRelationships?node-id=1%3A2)
 - Dark Color Scheme pairs `["#a6cee3","#1f78b4","#b2df8a","#33a02c","#fb9a99","#e31a1c","#fdbf6f","#ff7f00","#cab2d6","#6a3d9a","#ffff99","#b15928"]`
+
+### Hosting 
+
+- [AWS Research Credits](https://aws.amazon.com/research-credits/)
