@@ -1,25 +1,11 @@
 import { ITreeNode, TreeNode } from "../src/treeNode";
+import {buildTree} from "../src/layout"
 // https://www.digitalocean.com/community/tutorials/js-tree-traversal
-const simple = [
-  {
-    name: "grandparent",
-    children: [
-      {
-        name: "parentA",
-        children: [
-          { name: "childA1" },
-          { name: "childA2" },
-          { name: "childA3" },
-        ],
-      },
+import simple from "./data/simple.json";
 
-      { name: "parentB" },
-      {
-        name: "parentC",
-        children: [{ name: "childC1" }, { name: "childC2" }],
-      },
-    ],
-  },
-];
 // need to traverse in post order
-test("initialY", () => {});
+test("buildTree", () => {
+  let root = buildTree(simple, null, null, 0);
+  console.log(root);
+  expect(true).toBe(true);
+});

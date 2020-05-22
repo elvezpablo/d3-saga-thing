@@ -1,0 +1,35 @@
+{
+  "name": "grandparent",
+  "children": [
+    {
+      "name": "parentA",
+      "children": [
+        {
+          "name": "childA1"
+        },
+        {
+          "name": "childA2"
+        },
+        {
+          "name": "childA3"
+        }
+      ]
+    },
+    {
+      "name": "parentB",
+      "children": []
+    },
+    {
+      "name": "parentC",
+      "children": [
+        {
+          "name": "childC1"
+        },
+        {
+          "name": "childC2"
+        }
+      ]
+    }
+  ]
+}
+

@@ -1,30 +1,21 @@
 Arguments: 
-  /Users/prange000/.nvm/versions/node/v13.7.0/bin/node /usr/local/Cellar/yarn/1.22.4/libexec/bin/yarn.js add _D @babel/preset-typescript
+  /usr/local/Cellar/node/14.2.0/bin/node /usr/local/Cellar/yarn/1.22.4/libexec/bin/yarn.js install --force
 
 PATH: 
-  /Users/prange000/.gem/bin:/usr/local/sbin:/usr/local/opt/sqlite/bin:/usr/local/opt/icu4c/sbin:/Users/prange000/.nvm/versions/node/v13.7.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/prange000/.gem/bin:/usr/local/sbin:/usr/local/opt/sqlite/bin:/usr/local/opt/icu4c/sbin:/Users/prange000/.nvm/versions/node/v13.7.0/bin:/usr/local/opt/fzf/bin
+  /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 
 Yarn version: 
   1.22.4
 
 Node version: 
-  13.7.0
+  14.2.0
 
 Platform: 
   darwin x64
 
 Trace: 
-  Error: https://repo.theplatform.com/artifactory/api/npm/npm-tp/_D: not_found
-      at Request.params.callback [as _callback] (/usr/local/Cellar/yarn/1.22.4/libexec/lib/cli.js:66987:18)
-      at Request.self.callback (/usr/local/Cellar/yarn/1.22.4/libexec/lib/cli.js:140748:22)
-      at Request.emit (events.js:321:20)
-      at Request.<anonymous> (/usr/local/Cellar/yarn/1.22.4/libexec/lib/cli.js:141720:10)
-      at Request.emit (events.js:321:20)
-      at IncomingMessage.<anonymous> (/usr/local/Cellar/yarn/1.22.4/libexec/lib/cli.js:141642:12)
-      at Object.onceWrapper (events.js:427:28)
-      at IncomingMessage.emit (events.js:333:22)
-      at endReadableNT (_stream_readable.js:1201:12)
-      at processTicksAndRejections (internal/process/task_queues.js:84:21)
+  Error: connect ECONNREFUSED 208.79.65.147:443
+      at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1142:16)
 
 npm manifest: 
   {
@@ -41,6 +32,7 @@ npm manifest:
     "devDependencies": {
       "@babel/core": "^7.9.6",
       "@babel/preset-env": "^7.9.6",
+      "@babel/preset-typescript": "^7.9.0",
       "@types/jest": "^25.2.3",
       "babel-jest": "^26.0.1",
       "jest": "^26.0.1",
@@ -148,6 +140,18 @@ Lockfile:
       levenary "^1.1.1"
       semver "^5.5.0"
   
+  "@babel/helper-create-class-features-plugin@^7.9.6":
+    version "7.9.6"
+    resolved "https://repo.theplatform.com:443/artifactory/api/npm/npm-tp/@babel/helper-create-class-features-plugin/-/helper-create-class-features-plugin-7.9.6.tgz#965c8b0a9f051801fd9d3b372ca0ccf200a90897"
+    integrity sha1-llyLCp8FGAH9nTs3LKDM8gCpCJc=
+    dependencies:
+      "@babel/helper-function-name" "^7.9.5"
+      "@babel/helper-member-expression-to-functions" "^7.8.3"
+      "@babel/helper-optimise-call-expression" "^7.8.3"
+      "@babel/helper-plugin-utils" "^7.8.3"
+      "@babel/helper-replace-supers" "^7.9.6"
+      "@babel/helper-split-export-declaration" "^7.8.3"
+  
   "@babel/helper-create-regexp-features-plugin@^7.8.3", "@babel/helper-create-regexp-features-plugin@^7.8.8":
     version "7.8.8"
     resolved "https://repo.theplatform.com:443/artifactory/api/npm/npm-tp/@babel/helper-create-regexp-features-plugin/-/helper-create-regexp-features-plugin-7.8.8.tgz#5d84180b588f560b7864efaeea89243e58312087"
@@ -254,7 +258,7 @@ Lockfile:
       "@babel/traverse" "^7.8.3"
       "@babel/types" "^7.8.3"
   
-  "@babel/helper-replace-supers@^7.8.3", "@babel/helper-replace-supers@^7.8.6":
+  "@babel/helper-replace-supers@^7.8.3", "@babel/helper-replace-supers@^7.8.6", "@babel/helper-replace-supers@^7.9.6":
     version "7.9.6"
     resolved "https://repo.theplatform.com:443/artifactory/api/npm/npm-tp/@babel/helper-replace-supers/-/helper-replace-supers-7.9.6.tgz#03149d7e6a5586ab6764996cd31d6981a17e1444"
     integrity sha1-AxSdfmpVhqtnZJls0x1pgaF+FEQ=
@@ -472,6 +476,13 @@ Lockfile:
     version "7.8.3"
     resolved "https://repo.theplatform.com:443/artifactory/api/npm/npm-tp/@babel/plugin-syntax-top-level-await/-/plugin-syntax-top-level-await-7.8.3.tgz#3acdece695e6b13aaf57fc291d1a800950c71391"
     integrity sha1-Os3s5pXmsTqvV/wpHRqACVDHE5E=
+    dependencies:
+      "@babel/helper-plugin-utils" "^7.8.3"
+  
+  "@babel/plugin-syntax-typescript@^7.8.3":
+    version "7.8.3"
+    resolved "https://repo.theplatform.com:443/artifactory/api/npm/npm-tp/@babel/plugin-syntax-typescript/-/plugin-syntax-typescript-7.8.3.tgz#c1f659dda97711a569cef75275f7e15dcaa6cabc"
+    integrity sha1-wfZZ3al3EaVpzvdSdffhXcqmyrw=
     dependencies:
       "@babel/helper-plugin-utils" "^7.8.3"
   
@@ -711,6 +722,15 @@ Lockfile:
     dependencies:
       "@babel/helper-plugin-utils" "^7.8.3"
   
+  "@babel/plugin-transform-typescript@^7.9.0":
+    version "7.9.6"
+    resolved "https://repo.theplatform.com:443/artifactory/api/npm/npm-tp/@babel/plugin-transform-typescript/-/plugin-transform-typescript-7.9.6.tgz#2248971416a506fc78278fc0c0ea3179224af1e9"
+    integrity sha1-IkiXFBalBvx4J4/AwOoxeSJK8ek=
+    dependencies:
+      "@babel/helper-create-class-features-plugin" "^7.9.6"
+      "@babel/helper-plugin-utils" "^7.8.3"
+      "@babel/plugin-syntax-typescript" "^7.8.3"
+  
   "@babel/plugin-transform-unicode-regex@^7.8.3":
     version "7.8.3"
     resolved "https://repo.theplatform.com:443/artifactory/api/npm/npm-tp/@babel/plugin-transform-unicode-regex/-/plugin-transform-unicode-regex-7.8.3.tgz#0cef36e3ba73e5c57273effb182f46b91a1ecaad"
@@ -795,6 +815,14 @@ Lockfile:
       "@babel/plugin-transform-dotall-regex" "^7.4.4"
       "@babel/types" "^7.4.4"
       esutils "^2.0.2"
+  
+  "@babel/preset-typescript@^7.9.0":
+    version "7.9.0"
+    resolved "https://repo.theplatform.com:443/artifactory/api/npm/npm-tp/@babel/preset-typescript/-/preset-typescript-7.9.0.tgz#87705a72b1f0d59df21c179f7c3d2ef4b16ce192"
+    integrity sha1-h3BacrHw1Z3yHBeffD0u9LFs4ZI=
+    dependencies:
+      "@babel/helper-plugin-utils" "^7.8.3"
+      "@babel/plugin-transform-typescript" "^7.9.0"
   
   "@babel/runtime@^7.8.4":
     version "7.9.6"
