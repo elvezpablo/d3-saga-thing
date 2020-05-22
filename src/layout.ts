@@ -5,6 +5,7 @@ enum SPACING {
 }
 
 // https://www.digitalocean.com/community/tutorials/js-tree-traversal
+// https://github.com/zchtodd/recurser/blob/master/static/recurser.js
 
 function initialY(node: ITreeNode) {
   const { children, y, prevSibling } = node;
