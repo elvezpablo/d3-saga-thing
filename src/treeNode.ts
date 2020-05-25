@@ -1,15 +1,28 @@
-class TreeNode<ITreeNode> {
+interface ITreeNode {
+  x: number;
+  y: number;
+  finalY: number;
+  mod: number;
+  parent?: ITreeNode;
+  prevSibling?: ITreeNode;
+  children?: ITreeNode[];
+  data?: any | undefined;
+  collapse: boolean;
+}
+
+class TreeNode implements ITreeNode {
   x = 0;
   y = 0;
   finalY = 0;
   modifier = 0;
-  parent?;
-  prevSibling?;
-  children = [];
-  data;
+  parent?: ITreeNode;
+  prevSibling?: ITreeNode;
+  mod = 0;
+  children?: ITreeNode[] = [];
+  data?: Object;
   collapse = false;
 
-  constructor(x, y, parent, prevSibling, data) {
+  constructor(x: number, y: number, parent?: ITreeNode, prevSibling?: ITreeNode, data?: Object) {
     this.x = x;
     this.y = y;
 
@@ -20,16 +33,6 @@ class TreeNode<ITreeNode> {
   }
 }
 
-interface ITreeNode {
-  x: number;
-  y: number;
-  finalY: number;
-  mod: number;
-  parent: ITreeNode;
-  prevSibling: ITreeNode;
-  children: ITreeNode[];
-  dataNode: any | undefined;
-  collapse: boolean;
-}
+
 
 export { ITreeNode, TreeNode };

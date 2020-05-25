@@ -1,0 +1,462 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`calculateInitialValues 1`] = `
+TreeNode {
+  "children": Array [
+    TreeNode {
+      "children": Array [
+        TreeNode {
+          "children": Array [],
+          "collapse": false,
+          "data": Object {
+            "name": "childA1",
+          },
+          "finalY": 0,
+          "mod": 0,
+          "modifier": 0,
+          "parent": [Circular],
+          "prevSibling": null,
+          "x": 0,
+          "y": 0,
+        },
+        TreeNode {
+          "children": Array [],
+          "collapse": false,
+          "data": Object {
+            "name": "childA2",
+          },
+          "finalY": 0,
+          "mod": 0,
+          "modifier": 0,
+          "parent": [Circular],
+          "prevSibling": TreeNode {
+            "children": Array [],
+            "collapse": false,
+            "data": Object {
+              "name": "childA1",
+            },
+            "finalY": 0,
+            "mod": 0,
+            "modifier": 0,
+            "parent": [Circular],
+            "prevSibling": null,
+            "x": 0,
+            "y": 0,
+          },
+          "x": 1,
+          "y": 3,
+        },
+        TreeNode {
+          "children": Array [],
+          "collapse": false,
+          "data": Object {
+            "name": "childA3",
+          },
+          "finalY": 0,
+          "mod": 0,
+          "modifier": 0,
+          "parent": [Circular],
+          "prevSibling": TreeNode {
+            "children": Array [],
+            "collapse": false,
+            "data": Object {
+              "name": "childA2",
+            },
+            "finalY": 0,
+            "mod": 0,
+            "modifier": 0,
+            "parent": [Circular],
+            "prevSibling": TreeNode {
+              "children": Array [],
+              "collapse": false,
+              "data": Object {
+                "name": "childA1",
+              },
+              "finalY": 0,
+              "mod": 0,
+              "modifier": 0,
+              "parent": [Circular],
+              "prevSibling": null,
+              "x": 0,
+              "y": 0,
+            },
+            "x": 1,
+            "y": 3,
+          },
+          "x": 2,
+          "y": 6,
+        },
+      ],
+      "collapse": false,
+      "data": Object {
+        "children": Array [
+          Object {
+            "name": "childA1",
+          },
+          Object {
+            "name": "childA2",
+          },
+          Object {
+            "name": "childA3",
+          },
+        ],
+        "name": "parentA",
+      },
+      "finalY": 0,
+      "mod": -3,
+      "modifier": 0,
+      "parent": [Circular],
+      "prevSibling": null,
+      "x": 0,
+      "y": 0,
+    },
+    TreeNode {
+      "children": Array [],
+      "collapse": false,
+      "data": Object {
+        "children": Array [],
+        "name": "parentB",
+      },
+      "finalY": 0,
+      "mod": 0,
+      "modifier": 0,
+      "parent": [Circular],
+      "prevSibling": TreeNode {
+        "children": Array [
+          TreeNode {
+            "children": Array [],
+            "collapse": false,
+            "data": Object {
+              "name": "childA1",
+            },
+            "finalY": 0,
+            "mod": 0,
+            "modifier": 0,
+            "parent": [Circular],
+            "prevSibling": null,
+            "x": 0,
+            "y": 0,
+          },
+          TreeNode {
+            "children": Array [],
+            "collapse": false,
+            "data": Object {
+              "name": "childA2",
+            },
+            "finalY": 0,
+            "mod": 0,
+            "modifier": 0,
+            "parent": [Circular],
+            "prevSibling": TreeNode {
+              "children": Array [],
+              "collapse": false,
+              "data": Object {
+                "name": "childA1",
+              },
+              "finalY": 0,
+              "mod": 0,
+              "modifier": 0,
+              "parent": [Circular],
+              "prevSibling": null,
+              "x": 0,
+              "y": 0,
+            },
+            "x": 1,
+            "y": 3,
+          },
+          TreeNode {
+            "children": Array [],
+            "collapse": false,
+            "data": Object {
+              "name": "childA3",
+            },
+            "finalY": 0,
+            "mod": 0,
+            "modifier": 0,
+            "parent": [Circular],
+            "prevSibling": TreeNode {
+              "children": Array [],
+              "collapse": false,
+              "data": Object {
+                "name": "childA2",
+              },
+              "finalY": 0,
+              "mod": 0,
+              "modifier": 0,
+              "parent": [Circular],
+              "prevSibling": TreeNode {
+                "children": Array [],
+                "collapse": false,
+                "data": Object {
+                  "name": "childA1",
+                },
+                "finalY": 0,
+                "mod": 0,
+                "modifier": 0,
+                "parent": [Circular],
+                "prevSibling": null,
+                "x": 0,
+                "y": 0,
+              },
+              "x": 1,
+              "y": 3,
+            },
+            "x": 2,
+            "y": 6,
+          },
+        ],
+        "collapse": false,
+        "data": Object {
+          "children": Array [
+            Object {
+              "name": "childA1",
+            },
+            Object {
+              "name": "childA2",
+            },
+            Object {
+              "name": "childA3",
+            },
+          ],
+          "name": "parentA",
+        },
+        "finalY": 0,
+        "mod": -3,
+        "modifier": 0,
+        "parent": [Circular],
+        "prevSibling": null,
+        "x": 0,
+        "y": 0,
+      },
+      "x": 1,
+      "y": 3,
+    },
+    TreeNode {
+      "children": Array [
+        TreeNode {
+          "children": Array [],
+          "collapse": false,
+          "data": Object {
+            "name": "childC1",
+          },
+          "finalY": 0,
+          "mod": 0,
+          "modifier": 0,
+          "parent": [Circular],
+          "prevSibling": null,
+          "x": 2,
+          "y": 0,
+        },
+        TreeNode {
+          "children": Array [],
+          "collapse": false,
+          "data": Object {
+            "name": "childC2",
+          },
+          "finalY": 0,
+          "mod": 0,
+          "modifier": 0,
+          "parent": [Circular],
+          "prevSibling": TreeNode {
+            "children": Array [],
+            "collapse": false,
+            "data": Object {
+              "name": "childC1",
+            },
+            "finalY": 0,
+            "mod": 0,
+            "modifier": 0,
+            "parent": [Circular],
+            "prevSibling": null,
+            "x": 2,
+            "y": 0,
+          },
+          "x": 3,
+          "y": 3,
+        },
+      ],
+      "collapse": false,
+      "data": Object {
+        "children": Array [
+          Object {
+            "name": "childC1",
+          },
+          Object {
+            "name": "childC2",
+          },
+        ],
+        "name": "parentC",
+      },
+      "finalY": 0,
+      "mod": -1.5,
+      "modifier": 0,
+      "parent": [Circular],
+      "prevSibling": TreeNode {
+        "children": Array [],
+        "collapse": false,
+        "data": Object {
+          "children": Array [],
+          "name": "parentB",
+        },
+        "finalY": 0,
+        "mod": 0,
+        "modifier": 0,
+        "parent": [Circular],
+        "prevSibling": TreeNode {
+          "children": Array [
+            TreeNode {
+              "children": Array [],
+              "collapse": false,
+              "data": Object {
+                "name": "childA1",
+              },
+              "finalY": 0,
+              "mod": 0,
+              "modifier": 0,
+              "parent": [Circular],
+              "prevSibling": null,
+              "x": 0,
+              "y": 0,
+            },
+            TreeNode {
+              "children": Array [],
+              "collapse": false,
+              "data": Object {
+                "name": "childA2",
+              },
+              "finalY": 0,
+              "mod": 0,
+              "modifier": 0,
+              "parent": [Circular],
+              "prevSibling": TreeNode {
+                "children": Array [],
+                "collapse": false,
+                "data": Object {
+                  "name": "childA1",
+                },
+                "finalY": 0,
+                "mod": 0,
+                "modifier": 0,
+                "parent": [Circular],
+                "prevSibling": null,
+                "x": 0,
+                "y": 0,
+              },
+              "x": 1,
+              "y": 3,
+            },
+            TreeNode {
+              "children": Array [],
+              "collapse": false,
+              "data": Object {
+                "name": "childA3",
+              },
+              "finalY": 0,
+              "mod": 0,
+              "modifier": 0,
+              "parent": [Circular],
+              "prevSibling": TreeNode {
+                "children": Array [],
+                "collapse": false,
+                "data": Object {
+                  "name": "childA2",
+                },
+                "finalY": 0,
+                "mod": 0,
+                "modifier": 0,
+                "parent": [Circular],
+                "prevSibling": TreeNode {
+                  "children": Array [],
+                  "collapse": false,
+                  "data": Object {
+                    "name": "childA1",
+                  },
+                  "finalY": 0,
+                  "mod": 0,
+                  "modifier": 0,
+                  "parent": [Circular],
+                  "prevSibling": null,
+                  "x": 0,
+                  "y": 0,
+                },
+                "x": 1,
+                "y": 3,
+              },
+              "x": 2,
+              "y": 6,
+            },
+          ],
+          "collapse": false,
+          "data": Object {
+            "children": Array [
+              Object {
+                "name": "childA1",
+              },
+              Object {
+                "name": "childA2",
+              },
+              Object {
+                "name": "childA3",
+              },
+            ],
+            "name": "parentA",
+          },
+          "finalY": 0,
+          "mod": -3,
+          "modifier": 0,
+          "parent": [Circular],
+          "prevSibling": null,
+          "x": 0,
+          "y": 0,
+        },
+        "x": 1,
+        "y": 3,
+      },
+      "x": 2,
+      "y": 6,
+    },
+  ],
+  "collapse": false,
+  "data": Object {
+    "children": Array [
+      Object {
+        "children": Array [
+          Object {
+            "name": "childA1",
+          },
+          Object {
+            "name": "childA2",
+          },
+          Object {
+            "name": "childA3",
+          },
+        ],
+        "name": "parentA",
+      },
+      Object {
+        "children": Array [],
+        "name": "parentB",
+      },
+      Object {
+        "children": Array [
+          Object {
+            "name": "childC1",
+          },
+          Object {
+            "name": "childC2",
+          },
+        ],
+        "name": "parentC",
+      },
+    ],
+    "name": "grandparent",
+  },
+  "finalY": 0,
+  "mod": -3,
+  "modifier": 0,
+  "parent": null,
+  "prevSibling": null,
+  "x": 0,
+  "y": 0,
+}
+`;
