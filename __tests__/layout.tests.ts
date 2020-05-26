@@ -9,7 +9,7 @@ import {
   shiftDown
 } from "../src/layout"
 
-import simple from "./data/simple.json";
+import * as simple from "./data/simple.json";
 
 // need to traverse in post order
 test("buildTree", () => {
