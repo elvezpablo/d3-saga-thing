@@ -1,21 +1,45 @@
 import { character } from "./character";
 import { buildTree } from "./layout";
-import { select, svg } from "d3";
+import { ITreeNode } from "./treeNode"
+import { select, svg, scaleSequential, max, interpolateBrBG } from "d3";
 import simple from "./data/simple.json";
 const RADIUS = 10;
 
 const build = () => {
   const tree = buildTree(simple, 0, null, null);
   console.log(tree);
+
+  draw(tree);
 };
 
+type d3Node = {
+  x: number,
+  y: number
+}
+const convertPostOrder = (tree: ITreeNode, linear: d3Node[]) => {
+  if (tree.children) {
+    tree.children.forEach(c => {
+      convertPostOrder(c, linear);
+    })
+  }
+  const { x, finalY } = tree;
+  linear.push({ x, y: finalY })
+};
 
-const draw = () => {
-  const data = [
-    { "x_axis": 30, "y_axis": 30, "radius": 20, "color": "blue" },
-    { "x_axis": 70, "y_axis": 70, "radius": 20, "color": "purple" },
-    { "x_axis": 110, "y_axis": 100, "radius": 20, "color": "red" }
-  ]
+const draw = (tree) => {
+  const margin = {
+    top: 20,
+    right: 20,
+    bottom: 20,
+    left: 20,
+  };
+  const data: d3Node[] = [];
+  convertPostOrder(tree, data);
+  const color = scaleSequential(interpolateBrBG).domain([0, max(data, d => d.x)]);
+  console.log(max(data, d => d.x));
+  console.log(color(2));
+
+
   const svg = select("#sketch");
   const circles = svg.selectAll("circle")
     .data(data)
@@ -23,14 +47,22 @@ const draw = () => {
     .append("circle");
 
   circles
-    .attr("cx", function (d) { return d.x_axis; })
-    .attr("cy", function (d) { return d.y_axis; })
+    .attr("cx", d => d.x + margin.left)
+    .attr("cy", d => d.y + margin.top)
     .attr("r", RADIUS)
-    .style("fill", function (d) { return d.color; });
+    .style("fill", d => color(d.x));
 }
 
-draw();
 
-select("#btn-build").on("click", () => {
-  build();
-})
+
+const setUp = () => {
+  // <button id="btn-build" > build < /button>
+  // < button id = "btn-draw" > draw < /button>
+  // < button id = "btn-initial" > initial < /button>
+  // < button id = "btn-final" > final < /button>
+  select("#btn-build").on("click", () => {
+    build();
+  })
+}
+
+setUp();

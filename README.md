@@ -21,6 +21,19 @@ Development of a affinal tree visualization for the display of familial connecti
 
 ![](docs/images/asmund_tree_20.png)
 
+## Dev Log
+
+### 05/26
+
+- Moved from rollup to webpack
+- Cleaned up types and synced tsconfig with webpack and vscode 
+
+### 05/27
+
+- get CSS framework in place
+- attach click handlers
+- simple tree layout (very simple)
+
 ## Requirements
 
 ### Version 1: Simple Single Family Affinal Tree
