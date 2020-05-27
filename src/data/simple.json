@@ -1,0 +1,34 @@
+{
+    "name": "GP",
+    "children": [
+        {
+            "name": "PA",
+            "children": [
+                {
+                    "name": "CA1"
+                },
+                {
+                    "name": "CA2"
+                },
+                {
+                    "name": "CA3"
+                }
+            ]
+        },
+        {
+            "name": "PB",
+            "children": []
+        },
+        {
+            "name": "PC",
+            "children": [
+                {
+                    "name": "CC1"
+                },
+                {
+                    "name": "CC2"
+                }
+            ]
+        }
+    ]
+}
