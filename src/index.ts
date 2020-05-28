@@ -1,16 +1,11 @@
 import { character } from "./character";
-import { buildTree } from "./layout";
+import { buildTree, calculateInitialValues } from "./layout";
 import { ITreeNode } from "./treeNode"
 import { select, svg, range, scaleSequential, max, interpolateBrBG } from "d3";
 import simple from "./data/simple.json";
 const RADIUS = 10;
 
-const build = () => {
-  const tree = buildTree(simple, 0, null, null);
-  console.log(tree);
 
-  draw(tree);
-};
 
 type d3Node = {
   x: number,
@@ -22,11 +17,12 @@ const convertPostOrder = (tree: ITreeNode, linear: d3Node[]) => {
       convertPostOrder(c, linear);
     })
   }
-  const { x, finalY } = tree;
-  linear.push({ x, y: finalY })
+  const { x, y } = tree;
+
+  linear.push({ x, y })
 };
 
-const draw = (tree) => {
+const draw = (tree, first) => {
   const margin = {
     top: 20,
     right: 20,
@@ -37,27 +33,31 @@ const draw = (tree) => {
   const data: d3Node[] = [];
   convertPostOrder(tree, data);
   const color = scaleSequential(interpolateBrBG).domain([0, max(data, d => d.x)]);
-  console.log(max(data, d => d.x));
-  console.log(color(2));
-
 
   const svg = select("#sketch");
+  let circles;
+  if (first) {
+    circles = svg.selectAll("circle").data(data).enter().append("circle")
+  } else {
+    circles = svg.selectAll("circle").data(data);
+  }
 
-  const circles = svg.selectAll("circle")
-    .data(data)
-    .enter()
-    .append("circle");
+  console.log(data);
 
   circles
+    .transition()
+    .duration(first ? 0 : 500)
     .attr("cx", d => d.x * 100 + margin.left)
-    .attr("cy", d => d.y + margin.top)
+    .attr("cy", d => d.y * 10 + margin.top)
     .attr("r", RADIUS)
     .style("fill", d => color(d.x));
+
+  circles.exit().remove();
+
 }
 
 const drawBG = () => {
   const svg = select("#sketch");
-  console.log(svg.style("width"));
   const bounds = {
     width: parseFloat(svg.style("width")),
     height: parseFloat(svg.style("height"))
@@ -78,19 +78,37 @@ const drawBG = () => {
     .attr("stroke", "white")
     .attr("stroke-width", 1)
 
+  lines.exit().remove();
 };
 
+const build = (first) => {
+  const tree = buildTree(simple, 0, null, null);
+  draw(tree, first);
+};
+
+const initial = () => {
+  const tree = buildTree(simple, 0, null, null);
+  calculateInitialValues(tree);
+  draw(tree, false);
+}
+
+const final = () => {
+  draw([], false);
+}
 
 const setUp = () => {
   drawBG();
-  // <button id="btn-build" > build < /button>
-  // < button id = "btn-draw" > draw < /button>
-  // < button id = "btn-initial" > initial < /button>
-  // < button id = "btn-final" > final < /button>
-  build();
-  select("#btn-build").on("click", () => {
+  build(true);
 
-  })
+  select("#btn-build").on("click", () => {
+    build(false);
+  });
+  select("#btn-initial").on("click", () => {
+    initial();
+  });
+  select("#btn-final").on("click", () => {
+    final()
+  });
 }
 
 setUp();

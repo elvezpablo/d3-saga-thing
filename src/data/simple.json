@@ -11,7 +11,12 @@
                     "name": "CA2"
                 },
                 {
-                    "name": "CA3"
+                    "name": "CA3",
+                    "children": [
+                        {
+                            "name": "BCA3"
+                        }
+                    ]
                 }
             ]
         },

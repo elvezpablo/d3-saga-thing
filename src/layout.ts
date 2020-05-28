@@ -37,8 +37,9 @@ export function calculateInitialValues(node: ITreeNode) {
     }
 
     node.mod = y - (maxY - minY) / 2;
+
   }
-  console.log(`${data.name} y: ${node.y} mod: ${node.mod}`)
+  // console.log(`${data.name} y: ${node.y} mod: ${node.mod}`)
 }
 
 export function calculateFinalValues(node, modSum) {
