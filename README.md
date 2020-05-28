@@ -23,16 +23,23 @@ Development of a affinal tree visualization for the display of familial connecti
 
 ## Dev Log
 
-### 05/26
+### 05/28
 
-- Moved from rollup to webpack
-- Cleaned up types and synced tsconfig with webpack and vscode 
+- used `range` function to draw bg lines
+- researched `selectAll` and `select` 
 
 ### 05/27
 
 - get CSS framework in place
 - attach click handlers
 - simple tree layout (very simple)
+
+### 05/26
+
+- Moved from rollup to webpack
+- Cleaned up types and synced tsconfig with webpack and vscode 
+
+
 
 ## Requirements
 
