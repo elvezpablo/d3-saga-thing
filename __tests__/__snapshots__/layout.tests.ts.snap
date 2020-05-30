@@ -449,6 +449,40 @@ TreeNode {
         "name": "parentC",
       },
     ],
+    "default": Object {
+      "children": Array [
+        Object {
+          "children": Array [
+            Object {
+              "name": "childA1",
+            },
+            Object {
+              "name": "childA2",
+            },
+            Object {
+              "name": "childA3",
+            },
+          ],
+          "name": "parentA",
+        },
+        Object {
+          "children": Array [],
+          "name": "parentB",
+        },
+        Object {
+          "children": Array [
+            Object {
+              "name": "childC1",
+            },
+            Object {
+              "name": "childC2",
+            },
+          ],
+          "name": "parentC",
+        },
+      ],
+      "name": "grandparent",
+    },
     "name": "grandparent",
   },
   "finalY": 0,

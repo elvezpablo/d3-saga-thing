@@ -23,23 +23,33 @@ export function calculateInitialValues(node: ITreeNode) {
   for (let i = 0; i < children.length; i++) {
     calculateInitialValues(children[i]);
   }
-
+  // 
   node.y = prevSibling ? prevSibling.y + SIBLING_PADDING : 0;
 
   if (children.length == 1) {
     node.mod = y;
-  } else if (children.length >= 2) {
-    let minY = Infinity;
-    let maxY = -minY;
-    for (let i = 0; i < children.length; i++) {
-      minY = Math.min(minY, children[i].y);
-      maxY = Math.max(maxY, children[i].y);
-    }
-
-    node.mod = y - (maxY - minY) / 2;
-
+  } else if (children.length > 1) {
+    node.mod = y - getMidPoint(children.map(c => c.y));
   }
   // console.log(`${data.name} y: ${node.y} mod: ${node.mod}`)
+}
+
+// const oldGetMidpoint = (values: number[]) => {
+//   let minY = Infinity;
+//   let maxY = -minY;
+
+//   for (let i = 0; i < values.length; i++) {
+//     minY = Math.min(minY, values[i]);
+//     maxY = Math.max(maxY, values[i]);
+//   }
+//   return (maxY - minY) / 2;
+// }
+
+export const getMidPoint = (values: number[]) => {
+  const sorted = values.sort();
+  const max = sorted.slice(-1).pop();
+  const min = sorted[0]
+  return (max - min) / 2;
 }
 
 export function calculateFinalValues(node, modSum) {

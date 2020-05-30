@@ -5,8 +5,6 @@ import { select, svg, range, scaleSequential, max, interpolateBrBG } from "d3";
 import simple from "./data/simple.json";
 const RADIUS = 10;
 
-
-
 type d3Node = {
   x: number,
   y: number
@@ -35,25 +33,27 @@ const draw = (tree, first) => {
   const color = scaleSequential(interpolateBrBG).domain([0, max(data, d => d.x)]);
 
   const svg = select("#sketch");
-  let circles;
-  if (first) {
-    circles = svg.selectAll("circle").data(data).enter().append("circle")
-  } else {
-    circles = svg.selectAll("circle").data(data);
-  }
-
+  // A merge pattern that works
+  // https://medium.com/@bryony_17728/d3-js-merge-in-depth-a3069749a84f
+  // https://www.d3indepth.com/enterexit/
+  // https://observablehq.com/@maliky/d3js-enter-update-and-exit
+  // bind the circles to data in a grop 
+  const circles = svg.selectAll("circle").data(data);
   console.log(data);
 
+  // keep the enter group and append circles
+  const circles_enter = circles.enter().append("circle");
+
   circles
+    .merge(circles_enter) // merge the enter with parent group
     .transition()
     .duration(first ? 0 : 500)
     .attr("cx", d => d.x * 100 + margin.left)
     .attr("cy", d => d.y * 10 + margin.top)
     .attr("r", RADIUS)
     .style("fill", d => color(d.x));
-
+  // clean up extra items
   circles.exit().remove();
-
 }
 
 const drawBG = () => {

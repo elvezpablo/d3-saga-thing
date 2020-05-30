@@ -6,10 +6,18 @@ import {
   updateYVals,
   fixNodeConflicts,
   getContour,
-  shiftDown
+  shiftDown,
+  getMidPoint
 } from "../src/layout"
 
 import * as simple from "./data/simple.json";
+
+test("getMidpoint", () => {
+  const ary0 = [20, 0];
+  const ary1 = [1000, 23, 56, 57, 788, 0];
+  expect(getMidPoint(ary0)).toEqual(10);
+  expect(getMidPoint(ary1)).toEqual(500);
+});
 
 // need to traverse in post order
 test("buildTree", () => {
