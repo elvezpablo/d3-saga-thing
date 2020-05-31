@@ -22,14 +22,14 @@ class TreeNode implements ITreeNode {
   data?: Object;
   collapse = false;
 
-  constructor(x: number, y: number, parent?: ITreeNode, prevSibling?: ITreeNode, data?: Object) {
+  constructor(x: number, y: number, parent?: ITreeNode, prevSibling?: ITreeNode, data?: any) {
     this.x = x;
     this.y = y;
 
     this.parent = parent;
     this.prevSibling = prevSibling;
 
-    this.data = data;
+    this.data = data.name;
   }
 }
 

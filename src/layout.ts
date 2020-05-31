@@ -118,21 +118,21 @@ export function fixNodeConflicts(root) {
 }
 
 export function buildTree(dataNode: any, level: number, parent?: ITreeNode, prevSibling?: ITreeNode) {
-  let root = new TreeNode(level, 0, parent, prevSibling, dataNode);
+  let newNode = new TreeNode(level, 0, parent, prevSibling, dataNode);
   if (dataNode.children) {
     for (let i = 0; i < dataNode.children.length; i++) {
-      root.children.push(
+      newNode.children.push(
         buildTree(
           dataNode.children[i],
-          level++,
-          root,
-          i >= 1 ? root.children[i - 1] : null,
+          level + 1,
+          newNode,
+          i >= 1 ? newNode.children[i - 1] : null,
         )
       );
     }
   }
 
-  return root;
+  return newNode;
 }
 
 export function updateYVals(root) {

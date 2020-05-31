@@ -1,23 +1,22 @@
 import { character } from "./character";
 import { buildTree, calculateInitialValues } from "./layout";
 import { ITreeNode } from "./treeNode"
-import { select, svg, range, scaleSequential, max, interpolateBrBG } from "d3";
+import { select, svg, range, scaleSequential, max, interpolateCool } from "d3";
 import simple from "./data/simple.json";
 const RADIUS = 10;
 
 type d3Node = {
+  label: string,
   x: number,
   y: number
 }
 const convertPostOrder = (tree: ITreeNode, linear: d3Node[]) => {
   if (tree.children) {
-    tree.children.forEach(c => {
-      convertPostOrder(c, linear);
-    })
+    tree.children.forEach(c => convertPostOrder(c, linear))
   }
-  const { x, y } = tree;
+  const { x, y, data } = tree;
 
-  linear.push({ x, y })
+  linear.push({ x, y, label: data })
 };
 
 const draw = (tree, first) => {
@@ -29,8 +28,10 @@ const draw = (tree, first) => {
   };
 
   const data: d3Node[] = [];
+
   convertPostOrder(tree, data);
-  const color = scaleSequential(interpolateBrBG).domain([0, max(data, d => d.x)]);
+
+  const color = scaleSequential(interpolateCool).domain([0, max(data, d => d.x)]);
 
   const svg = select("#sketch");
   // A merge pattern that works
@@ -45,13 +46,14 @@ const draw = (tree, first) => {
   const circles_enter = circles.enter().append("circle");
 
   circles
-    .merge(circles_enter) // merge the enter with parent group
+    .merge(circles_enter) // merge the enter with parent group    
     .transition()
     .duration(first ? 0 : 500)
     .attr("cx", d => d.x * 100 + margin.left)
-    .attr("cy", d => d.y * 10 + margin.top)
+    .attr("cy", (d, i) => d.y * 10 + margin.top + (i * 5))
+    .attr("stroke", "black")
     .attr("r", RADIUS)
-    .style("fill", d => color(d.x));
+    .style("fill", d => color(d.x))
   // clean up extra items
   circles.exit().remove();
 }
